@@ -10,10 +10,10 @@ by day.
 
 ## Motivation
 
-HN was created to be able to read Hacker News on an airplane.  Right
-before I get on a plane I'm always scrambling to open a bunch of new
-tabs so that I have things to read.  This solves that by creating one,
-neat, file that contains all of the days news and comments.
+HN Offline was created to be able to read Hacker News on an airplane.
+Right before I get on a plane I'm always scrambling to open a bunch of
+new tabs so that I have things to read.  This solves that by creating
+one, neat, file that contains all of the days news and comments.
 
 ## Reading the MHT file
 
