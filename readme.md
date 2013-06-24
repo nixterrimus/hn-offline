@@ -7,13 +7,17 @@ working offline links for the articles and comments.  It's useful for
 reading while offline or having a record of what's on the homepage day
 by day.
 
+## Installation
 
-## Motivation
+If you're using a mac and homebrew, installation is very easy:
 
-HN Offline was created to be able to read Hacker News on an airplane.
-Right before I get on a plane I'm always scrambling to open a bunch of
-new tabs so that I have things to read.  This solves that by creating
-one, neat, file that contains all of the days news and comments.
+- `brew tap nixterrimus/hnoffline`
+- `brew install hn-offline`
+
+After you've installed, the script can run as `hn-offline`.  This will output an MHT file to `$HOME/Documents/Saved Pages`.
+
+If you're on another kind of system, this bash script is stil pretty easy to install.  First make sure you have **httrack** installed and in your path.  Then download the git repository to your favorite script location, `chmod a+x hn-offline.sh` and then run it.  
+
 
 ## Reading the MHT file
 
@@ -24,13 +28,6 @@ this kind of file, I like
 extension](https://addons.mozilla.org/en-us/firefox/addon/unmht/).  The
 one complaint I have with this setup is it takes about 45 seconds for
 the browser to parse the MHT file when I load it.
-
-
-## Installation of the script
-
-This bash script is pretty easy to install, just download the git
-repository to your favorite script location, `chmod a+x hn-offline.sh`
-and then run it.
 
 
 ## Installation of HTTrack
@@ -50,6 +47,15 @@ On Ubuntu:
 
 For other distributions, see the [HTTrack installation
 page](http://www.httrack.com/page/2/)
+
+
+## Motivation
+
+HN Offline was created to be able to read Hacker News on an airplane.
+Right before I get on a plane I'm always scrambling to open a bunch of
+new tabs so that I have things to read.  This solves that by creating
+one, neat, file that contains all of the days news and comments.
+
 
 ## Author
 
