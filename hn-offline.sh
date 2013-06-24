@@ -4,6 +4,23 @@ DESINATION_PATH="$HOME/Documents/Saved Pages"
 TEMP_PATH="$HOME/.tmp-httrack"
 TARGET_FILENAME="$(date +%Y-%m-%d)-hackernews.mht"
 
+usage="$(basename "$0") [-h] builds an offline edition of Hacker News saved as an MHT file
+
+where:
+-h  show this help text"
+
+while [ $# -gt 0 ]
+do
+    case $1 in
+    -h|--help) echo "$usage" ;;
+    (--) shift; break;;
+    (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
+    (*) break;;
+    esac
+    shift
+done
+exit 1
+
 function main(){
 	checkDependencies
 	setupEnvironment
