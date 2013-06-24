@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DESINATION_PATH="$HOME/Documents/Saved Pages"
+PATH="/usr/local/bin:/usr/bin:$PATH"
 TEMP_PATH="$HOME/.tmp-httrack"
 TARGET_FILENAME="$(date +%Y-%m-%d)-hackernews.mht"
 
