@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DESINATION_PATH=$(pwd)
-TEMP_PATH="$HOME/.tmp-httrack"
+TEMP_PATH=$(mktemp -dt "$0")
 TARGET_FILENAME="$(date +%Y-%m-%d)-hackernews.mht"
 
 usage="$(basename "$0") [-h] builds an offline edition of Hacker News saved as an MHT file
@@ -34,8 +34,6 @@ function checkDependencies(){
 }
 
 function setupEnvironment(){
-	rm -rf $TEMP_PATH
-	mkdir -p $TEMP_PATH
 	mkdir -p $DESINATION_PATH
 	cd $TEMP_PATH
 }
