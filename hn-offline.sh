@@ -12,14 +12,15 @@ where:
 while [ $# -gt 0 ]
 do
     case $1 in
-    -h|--help) echo "$usage" ;;
+    -h|--help) 
+      echo "$usage"
+      exit 0;;
     (--) shift; break;;
     (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
     (*) break;;
     esac
     shift
 done
-exit 1
 
 function main(){
 	checkDependencies
