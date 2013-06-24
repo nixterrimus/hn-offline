@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-DESINATION_PATH=$(pwd)
+DESTINATION_PATH=$(pwd)
 TEMP_PATH=$(mktemp -dt "$0")
 TARGET_FILENAME="$(date +%Y-%m-%d)-hackernews.mht"
 
-usage="$(basename "$0") [-h] builds an offline edition of Hacker News saved as an MHT file
+usage="$(basename "$0") [-h] [-o destination] builds an offline edition of Hacker News saved as an MHT file
 
 where:
+-o  output directory location
 -h  show this help text"
 
 while [ $# -gt 0 ]
@@ -15,6 +16,9 @@ do
     -h|--help) 
       echo "$usage"
       exit 0;;
+    -o|--output)
+      DESTINATION_PATH="$2"
+      shift;;
     (--) shift; break;;
     (-*) echo "$0: error - unrecognized option $1" 1>&2; exit 1;;
     (*) break;;
@@ -34,7 +38,7 @@ function checkDependencies(){
 }
 
 function setupEnvironment(){
-	mkdir -p $DESINATION_PATH
+	mkdir -p $DESTINATION_PATH
 	cd $TEMP_PATH
 }
 
@@ -49,7 +53,7 @@ function downloadHN() {
 }
 
 function cleanUp(){
-	mv index.mht "$DESINATION_PATH/$TARGET_FILENAME"
+	mv index.mht "$DESTINATION_PATH/$TARGET_FILENAME"
 	rm -rf $TEMP_PATH
 }
 
